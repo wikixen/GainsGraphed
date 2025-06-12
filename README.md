@@ -16,8 +16,7 @@ app plans to contains the best aspects of all of these apps behind a one time
 purchase.
 
 ## TODO
-
-- [ ] Build a UI on Figma
+- [ ] Build a UI
 - [ ] Implement UI
 - [ ] ...?
 - [ ] Deploy to Expo

@@ -1,27 +1,14 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 
-export default function DiaryScreen() {
+// FoodDiary shows food eaten separated by category(breakfast, lunch, snack, etc.)
+const FoodDiary = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>DiaryScreen</Text>
+    <View>
+      <Text>FoodDiary</Text>
     </View>
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    color: "black",
-  },
-  button: {
-    fontSize: 20,
-    textDecorationLine: "underline",
-    color: "#fff",
-  },
-});
+export default FoodDiary
+
+const styles = StyleSheet.create({})

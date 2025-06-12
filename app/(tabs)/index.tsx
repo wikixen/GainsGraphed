@@ -1,26 +1,17 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from 'react-native'
 
-export default function Index() {
+// Index is the dashboard & shows a few things:
+// 1. A button to start the day n of routine if any scheduled routines exist 
+// 2. If a routine/exercise is being currently done a button/card is shown that when clicked takes one to current.tsx
+// 3. Any lifts, cardio, or biometric data of interest is shown here
+const Index = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Home screen</Text>
+    <View>
+      <Text>Index</Text>
     </View>
-  );
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    color: "black",
-  },
-  button: {
-    fontSize: 20,
-    textDecorationLine: "underline",
-    color: "#fff",
-  },
-});
+export default Index
+
+const styles = StyleSheet.create({})

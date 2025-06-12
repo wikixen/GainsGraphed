@@ -1,65 +1,28 @@
-import { Tabs } from "expo-router";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { Tabs } from 'expo-router';
+import { StyleSheet } from 'react-native';
+import { Colors } from '../../constants/colors';
 
-export default function TabLayout() {
+const TabLayout = () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#16252d',
-        headerStyle: {
-          backgroundColor: 'white',
-        },
-        headerShadowVisible: false,
-        tabBarStyle: {
-          backgroundColor: 'white',
-        },
+        tabBarActiveTintColor: Colors.navTint
       }}
     >
       <Tabs.Screen
-        name="index"
+        name='index'
         options={{
-          title: "Dashboard",
+          title: 'Dashboard',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? "home-sharp" : "home-outline"} color={color} size={24}/>
-          )
-        }}
-      />
-      <Tabs.Screen
-        name="train"
-        options={{
-          title: "Train",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? "fitness" : "fitness-outline"} color={color} size={24} />
-          )
-        }}
-      />
-      <Tabs.Screen
-        name="add"
-        options={{
-          title: "Add",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? "add-circle" : "add-circle-outline"} color={color} size={24} />
-          )
-        }}
-      />
-      <Tabs.Screen
-        name="diary"
-        options={{
-          title: "Diary",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? "nutrition" : "nutrition-outline"} color={color} size={24} />
-          )
-        }}
-      />
-      <Tabs.Screen
-        name="analytics"
-        options={{
-          title: "Analytics",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? "trending-up" : "trending-up-outline"} color={color} size={24} />
-          )
+            <Ionicons name={focused ? 'home-sharp': 'home-outline'} color={color} size={24} />
+          ),
         }}
       />
     </Tabs>
-  );
+  )
 }
+
+export default TabLayout
+
+const styles = StyleSheet.create({})
