@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from "react-native";
 
 // FoodSearch is screen shown while searching food items
 const FoodSearch = () => {
@@ -6,9 +6,9 @@ const FoodSearch = () => {
     <View>
       <Text>FoodSearch</Text>
     </View>
-  )
-}
+  );
+};
 
-export default FoodSearch
+export default FoodSearch;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

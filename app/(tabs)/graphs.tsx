@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
 
 // Graphs shows graphs of lifts, cardio time, etc.
 const Graphs = () => {
@@ -7,9 +7,9 @@ const Graphs = () => {
     <View>
       <Text>Graphs</Text>
     </View>
-  )
-}
+  );
+};
 
-export default Graphs
+export default Graphs;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

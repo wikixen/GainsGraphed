@@ -3,10 +3,10 @@ export const Colors = {
 
   dark: {
     text: "white",
-    bg: "#071115"
+    bg: "#071115",
   },
   light: {
     text: "black",
-    bg: "#E2EFF8"
-  }
-}
+    bg: "#E2EFF8",
+  },
+};

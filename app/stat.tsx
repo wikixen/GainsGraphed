@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from "react-native";
 
 // Stat is the screen shown when a graph in Graphs or Dashboard is clicked on
 const Stat = () => {
@@ -6,9 +6,9 @@ const Stat = () => {
     <View>
       <Text>Stat</Text>
     </View>
-  )
-}
+  );
+};
 
-export default Stat
+export default Stat;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
 
 // Gallery shows all selfies taken
 const Gallery = () => {
@@ -7,9 +7,9 @@ const Gallery = () => {
     <View>
       <Text>ProgressPics</Text>
     </View>
-  )
-}
+  );
+};
 
-export default Gallery
+export default Gallery;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

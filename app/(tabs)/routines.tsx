@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from "react-native";
 
 // Routines shows all saved routines, allows users to schedule routines through a start button, & create new routines
 const Routines = () => {
@@ -6,9 +6,9 @@ const Routines = () => {
     <View>
       <Text>Routines</Text>
     </View>
-  )
-}
+  );
+};
 
-export default Routines
+export default Routines;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

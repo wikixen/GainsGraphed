@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from "react-native";
 
 //Food screen shows the details of a single food item; Is shown when an item is clicked in food diary
 const FoodItem = () => {
@@ -6,9 +6,9 @@ const FoodItem = () => {
     <View>
       <Text>Food</Text>
     </View>
-  )
-}
+  );
+};
 
-export default FoodItem
+export default FoodItem;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

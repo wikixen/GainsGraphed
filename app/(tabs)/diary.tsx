@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from "react-native";
 
 // FoodDiary shows food eaten separated by category(breakfast, lunch, snack, etc.)
 const FoodDiary = () => {
@@ -6,9 +6,9 @@ const FoodDiary = () => {
     <View>
       <Text>FoodDiary</Text>
     </View>
-  )
-}
+  );
+};
 
-export default FoodDiary
+export default FoodDiary;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
