@@ -1,4 +1,4 @@
-import { User } from "@/constants/models";
+import { User } from "@/constants/types";
 
 export const sampleUser: User = {
   userId: 0,

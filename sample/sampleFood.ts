@@ -1,4 +1,4 @@
-import { Food } from "@/constants/models";
+import { Food } from "@/constants/types";
 
 export const sampleFood: Food[] = [
   {

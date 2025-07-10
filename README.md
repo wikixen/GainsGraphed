@@ -20,6 +20,8 @@ purchase.
 - [ ] Build a UI
 - [ ] Add Clerk Auth
 - [ ] [Add drizzle & expo sqlite](https://expo.dev/blog/modern-sqlite-for-react-native-apps)
-- [ ] Attach UI to db
-- [ ] Deploy to Expo
+  - [ ] Attach UI to db
+- [ ] Add OpenFood API
+  - [ ] Add camera scanner
 - [ ] ...
+- [ ] Deploy to Expo
