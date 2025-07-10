@@ -1,6 +1,6 @@
 import { User } from "@/constants/models";
 
-const sampleData: User = {
+export const sampleUser: User = {
   userId: 0,
   name: "John Doe",
   sex: "male",
@@ -38,7 +38,7 @@ const sampleData: User = {
               c: 0,
               d: 0,
               e: 0,
-              k: 0
+              k: 0,
             },
             minerals: {
               calcium: 0,
@@ -50,25 +50,25 @@ const sampleData: User = {
               potassium: 0,
               selenium: 0,
               sodium: 0,
-              zinc: 0
+              zinc: 0,
             },
             carbs: 0,
             lipids: 0,
-            protein: 0
-          }
-        }
+            protein: 0,
+          },
+        },
       ],
       date: new Date(Date.now()),
       complete: false,
-      notes: ""
+      notes: "",
     },
     {
       id: 1,
       meals: [],
-      date: new Date(Date.now()-1),
+      date: new Date(Date.now() - 1),
       complete: false,
-      notes: ""
-    }
+      notes: "",
+    },
   ],
   routines: [
     {
@@ -79,16 +79,28 @@ const sampleData: User = {
           target: "reps",
           name: "bench press",
           equipment: "barbell",
-          muscles: "chest"
+          muscles: ["chest", "triceps", "front delts"],
         },
+        {
+          id: 1,
+          target: "reps",
+          name: "cable curl",
+          equipment: "cable",
+          muscles: ["biceps"],
+        },
+      ],
+    },
+    {
+      id: 0,
+      exercises: [
         {
           id: 0,
           target: "reps",
-          name: "",
-          equipment: "cable",
-          muscles: undefined
-        }
-      ]
-    }
-  ]
-}
+          name: "leg press",
+          equipment: "machine",
+          muscles: ["quads","hamstrings","glutes"],
+        },
+      ],
+    },
+  ],
+};

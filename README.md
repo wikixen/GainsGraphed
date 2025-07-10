@@ -18,6 +18,8 @@ purchase.
 ## TODO
 
 - [ ] Build a UI
-- [ ] Implement UI
-- [ ] ...?
+- [ ] Add Clerk Auth
+- [ ] [Add drizzle & expo sqlite](https://expo.dev/blog/modern-sqlite-for-react-native-apps)
+- [ ] Attach UI to db
 - [ ] Deploy to Expo
+- [ ] ...

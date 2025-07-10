@@ -11,20 +11,21 @@ export interface User {
   routines: Routine[];
 }
 
-interface Diary {
+export interface Diary {
   id: number;
   meals: Food[];
   date: Date;
   complete: boolean;
   notes: string;
 }
-interface Food {
+
+export interface Food {
   id: number;
   favorite: boolean;
   name: string;
   amount: number;
   unit: "oz" | "g" | (string & {});
-  time: Date;
+  time?: Date;
   mealType: "breakfast" | "lunch" | "dinner" | "snack";
   macros: {
     calories: number;
@@ -93,12 +94,13 @@ interface Food {
   };
 }
 
-interface Routine {
+export interface Routine {
   id: number;
   exercises: Exercise[];
+  date?: Date;
 }
 
-interface Exercise {
+export interface Exercise {
   id: number;
   target: "reps" | "time";
   name: string;
@@ -113,7 +115,7 @@ interface Exercise {
     | "cable"
     | "ez bar"
     | (string & {});
-  muscles:
+  muscles: Array<
     | "chest"
     | "front delts"
     | "mid delts"
@@ -134,5 +136,6 @@ interface Exercise {
     | "calves"
     | "olympic"
     | "full body"
-    | (string & {});
+    | (string & {})
+  >;
 }

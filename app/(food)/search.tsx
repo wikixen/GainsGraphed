@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 // FoodSearch is screen shown while searching food items
 const FoodSearch = () => {
   return (
-    <View>
+    <ScrollView>
       <Text>FoodSearch</Text>
-    </View>
+    </ScrollView>
   );
 };
 
