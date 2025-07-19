@@ -1,13 +1,17 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Tabs } from "expo-router";
 import { StyleSheet } from "react-native";
-import { Colors } from "../../constants/colors";
+import { COLORS } from "../../constants/colors";
 
 const TabLayout = () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors.navTint,
+        headerStyle: { backgroundColor: COLORS.background },
+        headerTintColor: COLORS.foreground,
+        tabBarActiveTintColor: COLORS.primary,
+        tabBarStyle: { backgroundColor: COLORS.background },
+        sceneStyle: { backgroundColor: COLORS.background },
       }}
     >
       <Tabs.Screen

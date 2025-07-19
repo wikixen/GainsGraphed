@@ -16,12 +16,14 @@ app plans to contains the best aspects of all of these apps behind a one time
 purchase.
 
 ## TODO
-
-- [ ] Build a UI
-- [ ] Add Clerk Auth
-- [ ] [Add drizzle & expo sqlite](https://expo.dev/blog/modern-sqlite-for-react-native-apps)
+- [ ] Implement exercise/routine functionality
+  - [ ] UI
+  - [ ] [Add drizzle & expo sqlite](https://expo.dev/blog/modern-sqlite-for-react-native-apps)
   - [ ] Attach UI to db
-- [ ] Add OpenFood API
-  - [ ] Add camera scanner
-- [ ] ...
+- [ ] Add Clerk Auth
 - [ ] Deploy to Expo
+- [ ] ...
+- [ ] Implement food diary functionality
+  - [ ] Add OpenFood API
+    - [ ] Add camera scanner
+  - [ ] Attach UI to db
