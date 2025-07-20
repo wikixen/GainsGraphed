@@ -18,11 +18,22 @@ const RoutineBtn = ({title, weekAmount}: Props) => {
         <View style={styles.routineCardHeader}>
           <Text style={styles.routineCardHeaderText}>{ title }</Text>
           <Dropdown
-            trigger={<Ionicons name="pencil" color={COLORS.secondary} size={20} />}
-            dropdownItems={["Edit","Delete"]}
+            trigger={<Ionicons name="ellipsis-horizontal" color={COLORS.secondary} size={20} />}
+            dropdownItems={[
+              {
+                item: "Edit",
+                type: "normal"
+              },
+              {
+                item: "Delete",
+                type: "destructive"
+              }
+            ]}
           />
         </View>
-        <Text style={styles.routineCardWeeks}>{weekAmount !== 1 ? `${weekAmount} Weeks` : `${weekAmount} Week` }</Text>
+        <View>
+          <Text style={styles.routineCardWeeks}>{weekAmount !== 1 ? `${weekAmount} Weeks` : `${weekAmount} Week` }</Text>
+        </View>
       </Pressable>
     </View>
   )
@@ -45,7 +56,7 @@ const Routines = () => {
       />
       {/* Need to change to proper link */}
       <Pressable style={styles.createBtn}>
-        <Link href={"/"}>
+        <Link href={"/create"}>
           <Text style={styles.createBtnText}>Create A Routine</Text>
         </Link>
       </Pressable>
@@ -91,12 +102,14 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center"
   },
   routineCardHeaderText: {
     color: COLORS.cardForeground,
     fontSize: 20,
     fontWeight: 600
   },
-  routineCardWeeks: {color: COLORS.foreground},
+  routineCardWeeks: {
+    color: COLORS.foreground,
+    position: "absolute",
+  },
 });

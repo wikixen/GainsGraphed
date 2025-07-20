@@ -1,9 +1,14 @@
+import { COLORS } from "@/constants/colors";
 import { ReactNode, useState } from "react";
 import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
 
 interface Props {
   trigger: ReactNode | string;
-  dropdownItems: string[];
+  // dropdownItems: string[];
+  dropdownItems: {
+    item: string;
+    type: "normal" | "destructive";
+  }[];
 }
 
 const Dropdown = ({trigger, dropdownItems}: Props) => {
@@ -12,7 +17,6 @@ const Dropdown = ({trigger, dropdownItems}: Props) => {
   return (
     <View style={styles.container}>
       <Pressable
-        style={styles.button}
         onPress={() => setIsVisible(!isVisible)}
       >
         <Text style={styles.buttonText}>{trigger}</Text>
@@ -21,12 +25,12 @@ const Dropdown = ({trigger, dropdownItems}: Props) => {
         <View style={styles.dropdown}>
           <FlatList
             data={dropdownItems}
-            renderItem={(item) => (
+            renderItem={({item: item}) => (
               <Pressable style={styles.dropdownItem}>
-                <Text style={styles.dropdownText}>{ item.item }</Text>
+                {item.type === "destructive" ? <Text style={styles.dropdownDestructiveText}>{item.item}</Text> : <Text style={styles.dropdownText}>{item.item}</Text>}
               </Pressable>
             )}
-            keyExtractor={item => item}
+            keyExtractor={item => item.item}
           />
         </View>
       )}
@@ -37,22 +41,39 @@ const Dropdown = ({trigger, dropdownItems}: Props) => {
 export default Dropdown;
 
 const styles = StyleSheet.create({
-  container: {},
-  button: {},
+  container: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    width: "auto"
+  },
   buttonText: {
     color: "white"
   },
   dropdown: {
-    marginTop: 5,
-    backgroundColor: "white",
+    marginTop: 25,
     borderRadius: 5,
-    elevation: 1,
-
+    backgroundColor: COLORS.popoverBackground,
+    position: "absolute",
+    width: "auto",
+    borderColor: COLORS.border,
+    borderBottomEndRadius: 1,
+    borderWidth: 1,
+    elevation: 1
   },
   dropdownItem: {
-    padding: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
+    marginInline: 10,
+    paddingInline: 20,
+    paddingBlock: 10,
   },
-  dropdownText: {},
+  dropdownText: {
+    fontSize: 15,
+    color: COLORS.popoverForeground,
+    textAlign: "center",
+  },
+  dropdownDestructiveText: {
+    fontSize: 15,
+    color: COLORS.destructive,
+    textAlign: "center"
+  },
 });

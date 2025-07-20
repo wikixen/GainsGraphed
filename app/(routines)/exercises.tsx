@@ -1,9 +1,8 @@
 import { COLORS } from "@/constants/colors";
-import { baseExercises } from "@/constants/exercises";
 import { Link } from "expo-router";
 import { useState } from "react";
-import { FlatList, Pressable, StyleSheet, Text, TextInput } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { FlatList, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+
 
 interface BtnProps {
   img?: string;
@@ -11,31 +10,36 @@ interface BtnProps {
 }
 
 const Btn = ({ name }: BtnProps) => (
-  <Link href={"/"}>
-    <Pressable>
-      <Text style={styles.item}>{name}</Text>
-    </Pressable>
-  </Link>
+  <Pressable style={styles.btn}>
+    {/* Change Link */}
+    <Link href={"/"}>
+      <Text style={styles.btnText}>{name}</Text>
+    </Link>
+  </Pressable>
 );
 
 // AllExercises screen contains a list of all preset & custom exercises
 const AllExercises = () => {
   const [text, onChangeText] = useState("");
+
+  // The exercises will be sent over by server
+  const exercises = [
+    "Barbell Bench Press",
+    "Cable Lateral Raise",
+    "Standing Calf Raise",
+  ]
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeText}
-          value={text}
-        />
-        <FlatList
-          data={baseExercises}
-          renderItem={({ item }) => <Btn name={item} />}
-          style={styles.list}
-        />
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <View style={styles.container}>
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeText}
+        value={text}
+      />
+      <FlatList
+        data={exercises}
+        renderItem={({ item }) => <Btn name={item} />}
+      />
+    </View>
   );
 };
 
@@ -46,17 +50,20 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   input: {
-    borderColor: "black",
+    borderColor: COLORS.border,
     borderWidth: 1,
     height: 40,
-    borderRadius: 10,
-  },
-  list: {
-    marginBlock: 10,
-  },
-  item: {
+    borderRadius: 5,
     fontSize: 20,
-    paddingBlock: 10,
-    backgroundColor: "#E2EFF8",
+    padding: 10
+  },
+  btn: {
+    padding: 20,
+    backgroundColor: COLORS.primary,
+    marginBlock: 1,
+    borderRadius: 5
+  },
+  btnText: {
+    fontSize: 20,
   },
 });
