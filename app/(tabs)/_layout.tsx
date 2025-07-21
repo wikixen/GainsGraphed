@@ -1,17 +1,30 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Tabs } from "expo-router";
-import { StyleSheet } from "react-native";
+import { Link, Tabs } from "expo-router";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { COLORS } from "../../constants/colors";
+
+const SettingsBtn = () => (
+  <Pressable>
+    <Link href={"/settings"}>
+      <Ionicons
+        name="settings-outline"
+        size={24}
+        color={COLORS.primaryForeground}
+      />
+    </Link>
+  </Pressable>
+)
 
 const TabLayout = () => {
   return (
     <Tabs
       screenOptions={{
         headerStyle: { backgroundColor: COLORS.background },
-        headerTintColor: COLORS.foreground,
+        headerTintColor: COLORS.primaryForeground,
         tabBarActiveTintColor: COLORS.primary,
         tabBarStyle: { backgroundColor: COLORS.background },
         sceneStyle: { backgroundColor: COLORS.background },
+        headerRight: () => <SettingsBtn />
       }}
     >
       <Tabs.Screen
@@ -51,6 +64,16 @@ const TabLayout = () => {
               size={24}
             />
           ),
+          headerRight: () => (
+            <View style={styles.headerBtns}>
+              <Pressable>
+                <Link href={"/(routines)/exercises"}>
+                  Exercises
+                </Link>
+              </Pressable>
+              <SettingsBtn />
+            </View>
+          )
         }}
       />
       <Tabs.Screen
@@ -77,6 +100,20 @@ const TabLayout = () => {
               size={24}
             />
           ),
+          headerRight: () => (
+            <View style={styles.headerBtns}>
+              <Pressable>
+                <Link href={"/gallery"}>
+                  <Ionicons
+                    name="camera-outline"
+                    size={24}
+                    color={COLORS.primaryForeground}
+                  />
+                </Link>
+              </Pressable>
+              <SettingsBtn />
+            </View>
+          )
         }}
       />
     </Tabs>
@@ -85,4 +122,10 @@ const TabLayout = () => {
 
 export default TabLayout;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  headerBtns: {
+    display: "flex",
+    flexDirection: "row",
+    columnGap: 10
+  }
+});
