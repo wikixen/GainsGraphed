@@ -19,10 +19,10 @@ const TabLayout = () => {
   return (
     <Tabs
       screenOptions={{
-        headerStyle: { backgroundColor: COLORS.background },
-        headerTintColor: COLORS.primaryForeground,
         tabBarActiveTintColor: COLORS.primary,
         tabBarStyle: { backgroundColor: COLORS.background },
+        headerStyle: { backgroundColor: COLORS.background },
+        headerTintColor: COLORS.primaryForeground,
         sceneStyle: { backgroundColor: COLORS.background },
         headerRight: () => <SettingsBtn />
       }}
@@ -66,9 +66,9 @@ const TabLayout = () => {
           ),
           headerRight: () => (
             <View style={styles.headerBtns}>
-              <Pressable>
-                <Link href={"/(routines)/exercises"}>
-                  Exercises
+              <Pressable style={styles.headerRightBtn}>
+                <Link href={"/exercises"}>
+                  <Text style={styles.headerRightBtnText}>Exercises</Text>
                 </Link>
               </Pressable>
               <SettingsBtn />
@@ -126,6 +126,19 @@ const styles = StyleSheet.create({
   headerBtns: {
     display: "flex",
     flexDirection: "row",
-    columnGap: 10
+    columnGap: 10,
+    alignItems: "center"
+  },
+  headerRightBtn: {
+    borderWidth: 1,
+    borderColor: COLORS.primaryForeground,
+    paddingBlock: 5,
+    paddingInline: 10,
+    borderRadius: 5
+  },
+  headerRightBtnText: {
+    color: COLORS.primaryForeground,
+    fontSize: 15,
+    fontWeight: "500"
   }
 });

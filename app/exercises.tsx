@@ -35,6 +35,7 @@ const AllExercises = () => {
         onChangeText={onChangeText}
         value={text}
       />
+      
       <FlatList
         data={exercises}
         renderItem={({ item }) => <Btn name={item} />}
